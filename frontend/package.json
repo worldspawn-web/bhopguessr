@@ -10,9 +10,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "tests": "npx playwright test",
-    "test-report": "npx playwright show-report",
-    "test-ui": "npx playwright test --ui"
+    "tests": "pnpm exec playwright test",
+    "test-report": "pnpm exec playwright show-report",
+    "test-ui": "pnpm exec playwright test --ui"
   },
   "dependencies": {
     "classnames": "^2.5.1",
