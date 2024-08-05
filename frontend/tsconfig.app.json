@@ -21,7 +21,18 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* TS paths */
+    "baseUrl": "./src",
+    "paths": {
+      // alias for application directory
+      "@app/*": ["./app/*"],
+      // alias for pages directory
+      "@pages/*": ["./pages/*"],
+      // alias for shared directory
+      "@shared/*": ["./shared/*"]
+    }
   },
   "include": ["src"]
 }
