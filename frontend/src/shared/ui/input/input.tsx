@@ -7,7 +7,16 @@ import styles from "./input.module.css";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { className, type = "text", invalid, readOnly, placeholder, id, ...props },
+    {
+      className,
+      type = "text",
+      invalid,
+      readOnly,
+      placeholder,
+      id,
+      disabled,
+      ...props
+    },
     ref,
   ) => {
     const [fieldHidden, setFieldHidden] = useState<boolean>(
@@ -46,17 +55,20 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           type={inputType}
           ref={ref}
           readOnly={readOnly}
+          placeholder={placeholder}
           id={id}
+          disabled={disabled}
           className={styles.input}
         />
         <label htmlFor={id} className={styles.input__label}>
           {placeholder}
         </label>
-        {type === "password" && (
+        {type === "password" && !disabled && (
           <button
             type="button"
             className={styles.input__button}
             onClick={hideToggleHandler}
+            disabled={disabled}
             aria-label="Show/hide password"
           >
             {inputType === "password" ? <EyeShowIcon /> : <EyeHideIcon />}
