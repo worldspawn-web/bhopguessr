@@ -124,6 +124,10 @@
   user-select: none;
 }
 
+.options__item[data-state='checked'] {
+  color: var(--primary-color);
+}
+
 .options__item[data-disabled] {
   color: var(--disabled-bg-color);
 }
