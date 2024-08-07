@@ -5,7 +5,7 @@ import { IconButton } from "@shared/ui";
 import { TestIcon } from "@shared/icons";
 
 const meta = {
-  title: "Example/IconButton",
+  title: "UI Kit/IconButton",
   component: IconButton,
   parameters: {
     layout: "centered",
