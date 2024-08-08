@@ -1,7 +1,7 @@
 {
   "name": "bhopguessr",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,18 +9,23 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "tests": "pnpm exec playwright test",
+    "test-report": "pnpm exec playwright show-report",
+    "test-ui": "pnpm exec playwright test --ui"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-select": "^2.1.1",
     "classnames": "^2.5.1",
     "framer-motion": "^11.3.23",
+    "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.6.1",
+    "@playwright/test": "^1.45.3",
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/addon-interactions": "^8.2.7",
     "@storybook/addon-links": "^8.2.7",
@@ -30,6 +35,7 @@
     "@storybook/react-vite": "^8.2.7",
     "@storybook/test": "^8.2.7",
     "@storybook/theming": "^8.2.8",
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
@@ -44,6 +50,7 @@
     "storybook-dark-mode": "^4.0.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
+    "vite-plugin-environment": "^1.1.3",
     "vite-tsconfig-paths": "^4.3.2"
   }
 }
