@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { forwardRef } from "react";
 import { Root, Indicator } from "@radix-ui/react-checkbox";
+import { motion } from "framer-motion";
 
 import { CheckIcon } from "../../icons";
 import type { CheckboxProps } from "./checkbox.interface";
@@ -15,14 +16,17 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
       <Root
         {...props}
         ref={ref}
+        asChild
         checked={value}
         onCheckedChange={onChange}
         disabled={disabled}
         className={styles.checkbox}
       >
-        <Indicator className={styles.checkbox__indicator}>
-          <CheckIcon />
-        </Indicator>
+        <motion.button whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+          <Indicator className={styles.checkbox__indicator}>
+            <CheckIcon />
+          </Indicator>
+        </motion.button>
       </Root>
       {label}
     </label>
