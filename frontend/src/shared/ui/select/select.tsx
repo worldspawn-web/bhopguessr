@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { forwardRef, useMemo } from "react";
+import { motion } from "framer-motion";
 import {
   Root,
   Trigger,
@@ -25,6 +26,7 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
       required,
       value,
       placeholder,
+      open,
       ...props
     },
     ref,
@@ -54,7 +56,7 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
     }, [displayValue, placeholder, selectedValue]);
 
     return (
-      <Root {...props} value={value} required={required}>
+      <Root {...props} open={open} value={value} required={required}>
         <div className={classNames(styles.select__wrapper, className)}>
           <Trigger ref={ref} className={styles.select__trigger}>
             {label}
@@ -68,11 +70,24 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
               position="popper"
               sideOffset={8}
             >
-              <ul>
+              <motion.ul
+                initial={{
+                  opacity: 0,
+                  translateY: 40,
+                }}
+                animate={{
+                  opacity: 1,
+                  translateY: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  translateY: 40,
+                }}
+              >
                 <ScrollDownButton>
                   <ArrowUpIcon />
                 </ScrollDownButton>
-                {options.map((item) => (
+                {options.map((item, index) => (
                   <Item
                     asChild
                     key={item.id}
@@ -80,13 +95,23 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
                     className={styles.options__item}
                     disabled={item.disabled}
                   >
-                    <li>{item.label}</li>
+                    <motion.li
+                      initial={{
+                        opacity: 0,
+                      }}
+                      animate={{
+                        opacity: 1,
+                      }}
+                      transition={{ delay: index / 10 }}
+                    >
+                      {item.label}
+                    </motion.li>
                   </Item>
                 ))}
                 <ScrollUpButton>
                   <ArrowDownIcon />
                 </ScrollUpButton>
-              </ul>
+              </motion.ul>
             </Content>
           </Portal>
         </div>

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export const CheckIcon = () => (
   <svg
     width="24"
@@ -6,17 +8,14 @@ export const CheckIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M5 10.4617L10.3371 16.0001"
+    <motion.path
+      d="M5 11.3333L10.1579 16L19 8"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2"
       strokeLinecap="round"
-    />
-    <path
-      d="M10.3271 16L18.9999 7.00011"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
+      initial={{ pathLength: 0 }}
+      animate={{ pathLength: 1 }}
+      exit={{ pathLength: 0 }}
     />
   </svg>
 );
