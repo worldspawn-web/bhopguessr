@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { forwardRef, useState, useMemo } from "react";
+import { motion } from "framer-motion";
 
 import { EyeHideIcon, EyeShowIcon } from "../../icons";
 import type { InputProps } from "./input.interface";
@@ -64,15 +65,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {placeholder}
         </label>
         {type === "password" && !disabled && (
-          <button
+          <motion.button
             type="button"
             className={styles.input__button}
             onClick={hideToggleHandler}
             disabled={disabled}
             aria-label="Show/hide password"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             {inputType === "password" ? <EyeShowIcon /> : <EyeHideIcon />}
-          </button>
+          </motion.button>
         )}
       </div>
     );

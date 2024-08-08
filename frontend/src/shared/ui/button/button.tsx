@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
 
 import type { ButtonProps } from "./button.interface";
 import styles from "./button.module.css";
@@ -10,9 +11,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     return (
-      <button
+      <motion.button
         {...props}
         ref={ref}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.1 }}
         className={classNames(
           styles.button,
           {

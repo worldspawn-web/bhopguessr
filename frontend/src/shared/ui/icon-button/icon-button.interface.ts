@@ -1,9 +1,9 @@
-import React from "react";
+import { motion } from "framer-motion";
 
 import type { Variant, Size } from "../ui.interface";
 
 export interface IconButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ComponentPropsWithoutRef<typeof motion.button> {
   /**
    * Variant of button
    * Available value: `primary | secondary | plain`
