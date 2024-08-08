@@ -33,7 +33,7 @@ const options: SelectOption[] = [
 ];
 
 const meta = {
-  title: "Example/Select",
+  title: "UI Kit/Select",
   component: Select,
   parameters: {
     layout: "centered",

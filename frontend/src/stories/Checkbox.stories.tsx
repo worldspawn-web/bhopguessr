@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Checkbox, type CheckedState } from "@shared/ui";
 
 const meta = {
-  title: "Example/Checkbox",
+  title: "UI Kit/Checkbox",
   component: Checkbox,
   parameters: {
     layout: "centered",
