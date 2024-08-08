@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { EyeHideIcon, EyeShowIcon } from "../../icons";
 import type { InputProps } from "./input.interface";
-import styles from "./input.module.css";
+import styles from "./input.module.scss";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
