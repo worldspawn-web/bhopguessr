@@ -8,26 +8,27 @@
   transition: all var(--fast--transition-delay);
 
   border: none;
-}
 
-.button:not(:disabled) {
-  cursor: pointer;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 .button--primary {
   background-color: var(--primary-color);
   color: var(--white-color);
+
+  &:hover {
+    background-color: var(--primary-hover-color);
+  }
+
+  &:active {
+    background-color: var(--primary-active-color);
+  }
 }
 
-.button--primary:hover {
-  background-color: var(--primary-hover-color);
-}
-
-.button--primary:active {
-  background-color: var(--primary-active-color);
-}
-
-.button--primary:disabled, .button--secondary:disabled {
+.button--primary:disabled,
+.button--secondary:disabled {
   background-color: var(--disabled-bg-color);
   color: var(--disabled-font-color);
 }
@@ -35,23 +36,23 @@
 .button--secondary {
   background-color: var(--secondary-color);
   color: var(--black-color);
-}
 
-.button--secondary:hover {
-  background-color: var(--secondary-hover-color);
-}
+  &:hover {
+    background-color: var(--secondary-hover-color);
+  }
 
-.button--secondary:active {
-  background-color: var(--secondary-active-color);
+  &:active {
+    background-color: var(--secondary-active-color);
+  }
 }
 
 .button--plain {
   background-color: transparent;
   color: var(--white-color);
-}
 
-.button--plain:disabled {
-  color: var(--disabled-font-color);
+  &:disabled {
+    color: var(--disabled-font-color);
+  }
 }
 
 .button--large {
