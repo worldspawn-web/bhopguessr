@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { CheckIcon } from "../../icons";
 import type { CheckboxProps } from "./checkbox.interface";
-import styles from "./checkbox.module.css";
+import styles from "./checkbox.module.scss";
 
 export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
   ({ className, label, disabled, value, onChange, ...props }, ref) => (
