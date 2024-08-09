@@ -1,32 +1,5 @@
 @import "./fonts/fonts.scss";
 
-:root {
-  --bg-dark-color: #151515;
-  --bg-light-color: #232323;
-
-  --white-color: #fff;
-  --black-color: #151515;
-
-  --primary-color: #ff5733;
-  --primary-hover-color: #e7664a;
-  --primary-active-color: #bf482f;
-
-  --secondary-color: #fff;
-  --secondary-hover-color: #e0e0e0;
-  --secondary-active-color: #a5a5a5;
-
-  --danger-color: #e37474;
-  --success-color: #00ff38;
-
-  --disabled-bg-color: #626262;
-  --disabled-font-color: #a0a0a0;
-
-  --outline-color: #434343;
-
-  --fast--transition-delay: 100ms;
-  --default-transition-delay: 150ms;
-}
-
 * {
   margin: 0;
   padding: 0;

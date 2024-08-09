@@ -1,7 +1,7 @@
 .button {
   font-weight: 400;
 
-  transition: all var(--fast--transition-delay);
+  transition: all $fast-transition-delay;
 
   border: none;
 
@@ -11,41 +11,41 @@
 }
 
 .button--primary {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  background-color: $primary-color;
+  color: $white-color;
 
   &:hover {
-    background-color: var(--primary-hover-color);
+    background-color: $primary-hover-color;
   }
   &:active {
-    background-color: var(--primary-active-color);
+    background-color: $primary-active-color;
   }
 }
 
 .button--primary:disabled,
 .button--secondary:disabled {
-  background-color: var(--disabled-bg-color);
-  color: var(--disabled-font-color);
+  background-color: $disabled-bg-color;
+  color: $disabled-font-color;
 }
 
 .button--secondary {
-  background-color: var(--secondary-color);
-  color: var(--black-color);
+  background-color: $secondary-color;
+  color: $black-color;
 
   &:hover {
-    background-color: var(--secondary-hover-color);
+    background-color: $secondary-hover-color;
   }
   &:active {
-    background-color: var(--secondary-active-color);
+    background-color: $secondary-active-color;
   }
 }
 
 .button--plain {
   background-color: transparent;
-  color: var(--white-color);
+  color: $white-color;
 
   &:disabled {
-    color: var(--disabled-font-color);
+    color: $disabled-font-color;
   }
 }
 

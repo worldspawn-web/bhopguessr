@@ -1,5 +1,5 @@
 .input__wrapper {
-  --border-color: var(--outline-color);
+  $border-color: $outline-color;
 
   position: relative;
 
@@ -21,7 +21,7 @@
 
     opacity: 0;
 
-    background-color: var(--primary-color);
+    background-color: $primary-color;
 
     transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -49,7 +49,7 @@
     width: 100%;
     height: 1px;
 
-    background-color: var(--border-color);
+    background-color: $border-color;
 
     transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -64,9 +64,9 @@
   border: none;
 
   background-color: transparent;
-  color: var(--white-color);
+  color: $white-color;
 
-  transition: all var(--default-transition-delay);
+  transition: all $default-transition-delay;
 
   &::placeholder {
     color: transparent;
@@ -74,26 +74,26 @@
   }
 
   &:disabled {
-    color: var(--disabled-font-color);
+    color: $disabled-font-color;
     .input__wrapper {
-      --border-color: var(--disabled-bg-color);
+      --border-color: $disabled-bg-color;
     }
   }
 
   &:read-only {
-    color: var(--disabled-font-color);
+    color: $disabled-font-color;
   }
 }
 
 .input--invalid {
-  --border-color: var(--danger-color);
+  --border-color: $danger-color;
   .input {
-    color: var(--danger-color);
+    color: $danger-color;
   }
 }
 
 .input--readonly {
-  --border-color: var(--disabled-bg-color);
+  --border-color: $disabled-bg-color;
 }
 
 .input__label {
@@ -102,14 +102,14 @@
   left: 0;
   translate: 0 -50%;
 
-  color: var(--disabled-font-color);
+  color: $disabled-font-color;
 
   cursor: text;
 
   user-select: none;
   pointer-events: none;
 
-  transition: all var(--default-transition-delay);
+  transition: all $default-transition-delay;
 }
 
 .input:focus + .input__label,
@@ -130,7 +130,7 @@
   align-items: center;
 
   background-color: transparent;
-  color: var(--white-color);
+  color: $white-color;
 
   border: none;
 
