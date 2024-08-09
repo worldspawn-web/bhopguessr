@@ -24,5 +24,3 @@ dist-ssr
 *.sw?
 
 *storybook.log
-
-*-lock.yaml
