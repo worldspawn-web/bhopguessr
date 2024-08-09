@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import { motion } from "framer-motion";
 
 import type { IconButtonProps } from "./icon-button.interface";
-import styles from "./icon-button.module.css";
+import styles from "./icon-button.module.scss";
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   (
