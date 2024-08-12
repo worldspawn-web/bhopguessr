@@ -1,0 +1,22 @@
+.radio_group {
+  position: relative;
+
+  width: 100%;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.indicator {
+  position: absolute;
+  right: 12px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background-color: var(--primary-color);
+}
