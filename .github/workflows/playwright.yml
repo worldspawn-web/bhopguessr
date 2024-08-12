@@ -15,7 +15,7 @@ jobs:
           node-version: lts/*
       - name: Log TEST Secret
         working-directory: frontend
-        run: echo ${{ secrets.TEST_URL }}
+        run: echo ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
         working-directory: frontend
         run: npm install -g pnpm && pnpm install
