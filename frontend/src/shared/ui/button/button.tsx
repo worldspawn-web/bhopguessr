@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import { motion } from "framer-motion";
 
 import type { ButtonProps } from "./button.interface";
-import styles from "./button.module.css";
+import styles from "./button.module.scss";
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
