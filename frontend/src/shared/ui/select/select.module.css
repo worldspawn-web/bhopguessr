@@ -27,6 +27,10 @@
   outline: none;
 }
 
+.select__trigger--invalid {
+  --border-color: var(--danger-color);
+}
+
 .select__trigger:focus {
   --border-color: var(--white-color);
 }
@@ -89,6 +93,21 @@
   bottom: 6px;
 
   opacity: 0;
+}
+
+.trigger__label {
+  color: var(--disabled-font-color);
+
+  transition: all var(--default-transition-delay);
+}
+
+.trigger__label--selected {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 calc(-100% - 12px);
+
+  font-size: 12px;
 }
 
 .select__options {

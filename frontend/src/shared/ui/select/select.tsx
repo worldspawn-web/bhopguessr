@@ -27,6 +27,7 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
       value,
       placeholder,
       open,
+      invalid,
       ...props
     },
     ref,
@@ -43,9 +44,9 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
       [options, returnValue, value],
     );
 
-    const label = useMemo<string>(() => {
+    const label = useMemo<string | null>(() => {
       if (isNull(selectedValue)) {
-        return placeholder;
+        return null;
       }
 
       if (displayValue) {
@@ -53,13 +54,25 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
       }
 
       return selectedValue.label;
-    }, [displayValue, placeholder, selectedValue]);
+    }, [displayValue, selectedValue]);
 
     return (
       <Root {...props} open={open} value={value} required={required}>
         <div className={classNames(styles.select__wrapper, className)}>
-          <Trigger ref={ref} className={styles.select__trigger}>
-            {label}
+          <Trigger
+            ref={ref}
+            className={classNames(styles.select__trigger, {
+              [styles["select__trigger--invalid"]]: invalid,
+            })}
+          >
+            <p
+              className={classNames(styles.trigger__label, {
+                [styles["trigger__label--selected"]]: Boolean(selectedValue),
+              })}
+            >
+              {placeholder}
+            </p>
+            {label && label}
             <ArrowDownIcon />
           </Trigger>
 

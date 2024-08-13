@@ -73,7 +73,7 @@ const SelectWithState = (
 
   return (
     <>
-      <p>Selected value: {value}</p>
+      <p style={{ marginBottom: 10 }}>Selected value: {value}</p>
       <Select {...props} value={value} onValueChange={setValue} />
     </>
   );

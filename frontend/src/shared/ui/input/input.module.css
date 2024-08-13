@@ -105,6 +105,8 @@
 
   color: var(--disabled-font-color);
 
+  font-size: 14px;
+
   cursor: text;
 
   user-select: none;
