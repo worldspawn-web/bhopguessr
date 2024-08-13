@@ -3,3 +3,4 @@ export * from "./button";
 export * from "./select";
 export * from "./icon-button";
 export * from "./checkbox";
+export * from "./radio";
