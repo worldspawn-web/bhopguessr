@@ -86,6 +86,14 @@ export const Primary: Story = {
   render: (props) => <SelectWithState {...props} />,
 };
 
+export const PrimaryWithReset: Story = {
+  args: {
+    placeholder: "Pick value",
+    reset: "Reset field",
+  },
+  render: (props) => <SelectWithState {...props} />,
+};
+
 export const PrimaryDisabled: Story = {
   args: {
     placeholder: "Pick value",

@@ -28,6 +28,7 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
       placeholder,
       open,
       invalid,
+      reset,
       ...props
     },
     ref,
@@ -100,6 +101,27 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
                 <ScrollDownButton>
                   <ArrowUpIcon />
                 </ScrollDownButton>
+                {reset && (
+                  <Item
+                    asChild
+                    value={null as unknown as string}
+                    className={classNames(
+                      styles.options__item,
+                      styles["options__item--reset"],
+                    )}
+                  >
+                    <motion.li
+                      initial={{
+                        opacity: 0,
+                      }}
+                      animate={{
+                        opacity: 1,
+                      }}
+                    >
+                      {reset}
+                    </motion.li>
+                  </Item>
+                )}
                 {options.map((item, index) => (
                   <Item
                     asChild

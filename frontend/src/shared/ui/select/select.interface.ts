@@ -14,4 +14,5 @@ export interface SelectProps extends SelectPrimitiveProps {
   returnValue?: (option: SelectOption) => string;
   className?: string;
   invalid?: boolean;
+  reset?: React.ReactNode;
 }
