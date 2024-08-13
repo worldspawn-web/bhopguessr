@@ -14,9 +14,9 @@
   align-content: center;
 
   background-color: transparent;
-  color: var(--white-color);
+  color: $white-color;
 
-  border: 1px solid var(--outline-color);
+  border: 1px solid $outline-color;
   border-radius: 6px;
 
   font-size: 14px;
@@ -25,7 +25,7 @@
 
   padding: 12px;
 
-  transition: background-color var(--fast--transition-delay);
+  transition: background-color $fast-transition-delay;
 
   &[data-disabled] {
     opacity: 0.5;
@@ -36,18 +36,18 @@
   }
 
   &:not(:disabled):hover {
-    background-color: var(--bg-light-color);
+    background-color: $bg-light-color;
   }
 
   &--selected {
-    border-color: var(--primary-active-color);
+    border-color: $primary-active-color;
   }
 
   &--invalid {
-    border-color: var(--danger-color);
+    border-color: $danger-color;
   }
 
   &--success {
-    border-color: var(--success-color);
+    border-color: $success-color;
   }
 }

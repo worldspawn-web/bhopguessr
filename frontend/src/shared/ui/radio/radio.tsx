@@ -10,7 +10,6 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioProps>(
   (
     {
       options,
-      invalid,
       returnValue,
       displayValue,
       className,
