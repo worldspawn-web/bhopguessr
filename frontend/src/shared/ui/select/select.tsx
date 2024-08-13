@@ -14,7 +14,7 @@ import {
 import { ArrowDownIcon, ArrowUpIcon } from "../../icons";
 import { isNull } from "../../utils";
 import type { SelectOption, SelectProps } from "./select.interface";
-import styles from "./select.module.css";
+import styles from "./select.module.scss";
 
 export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
   (
