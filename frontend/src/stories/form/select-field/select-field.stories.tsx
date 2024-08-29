@@ -45,7 +45,7 @@ const PrimaryWithForm = () => {
   const { control, handleSubmit, reset } = useForm<Schema>({
     resolver: zodResolver(schema),
     defaultValues: {
-      sex: "other",
+      sex: null,
     },
   });
 
@@ -76,6 +76,7 @@ const PrimaryWithForm = () => {
         name="sex"
         placeholder="Gender"
         options={options}
+        reset="Reset to default"
       />
       <button type="submit">Submit</button>
       <button type="button" onClick={() => reset()}>

@@ -111,6 +111,10 @@
   }
 }
 
+.select__required {
+  color: $danger-color;
+}
+
 .select__options {
   width: var(--radix-select-trigger-width);
   max-height: var(--radix-select-content-available-height);

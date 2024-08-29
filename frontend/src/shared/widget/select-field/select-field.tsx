@@ -28,8 +28,6 @@ const InnerComponent = <TFieldValues extends FieldValues = FieldValues>({
   const { onChange, ...restField } = field;
   const { invalid, error } = fieldState;
 
-  console.log(field);
-
   return (
     <div className={classNames(styles.field, className)}>
       <Select
