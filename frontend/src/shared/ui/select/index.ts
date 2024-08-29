@@ -1,2 +1,2 @@
 export { Select } from "./select";
-export type { SelectOption } from "./select.interface";
+export type { SelectOption, SelectProps } from "./select.interface";

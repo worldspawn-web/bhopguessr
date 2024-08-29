@@ -18,7 +18,7 @@ export const isUndefined = (value: unknown): value is undefined =>
   value === undefined && typeof value === "undefined";
 
 export const isNil = (value: unknown): value is Nil =>
-  isNil(value) || isUndefined(value);
+  isNull(value) || isUndefined(value);
 
 export const isArray = (value: unknown): value is any[] => Array.isArray(value);
 

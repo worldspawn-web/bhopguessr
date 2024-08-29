@@ -73,7 +73,7 @@ const SelectWithState = (
 
   return (
     <>
-      <p>Selected value: {value}</p>
+      <p style={{ marginBottom: 10 }}>Selected value: {value}</p>
       <Select {...props} value={value} onValueChange={setValue} />
     </>
   );
@@ -82,6 +82,14 @@ const SelectWithState = (
 export const Primary: Story = {
   args: {
     placeholder: "Pick value",
+  },
+  render: (props) => <SelectWithState {...props} />,
+};
+
+export const PrimaryWithReset: Story = {
+  args: {
+    placeholder: "Pick value",
+    reset: "Reset field",
   },
   render: (props) => <SelectWithState {...props} />,
 };
