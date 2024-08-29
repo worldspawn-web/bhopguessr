@@ -4,10 +4,28 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import type { SuccessSubmitHandler, RejectSubmitHandler } from "@shared/types";
 import { SelectField } from "@shared/widget";
-import type { SelectOption } from "@shared/ui";
+import type { SelectOption, SelectProps } from "@shared/ui";
 
 import type { Schema } from "./select-field.interface";
 import { schema } from "./select-field.schema";
+
+const options: SelectOption[] = [
+  {
+    id: 0,
+    value: "value man",
+    label: "Man",
+  },
+  {
+    id: 1,
+    value: "value woman",
+    label: "Woman",
+  },
+  {
+    id: 2,
+    value: "value other",
+    label: "Other",
+  },
+];
 
 const meta = {
   title: "UI Kit/Select Field",
@@ -17,31 +35,18 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {},
-  args: {},
+  args: {
+    options,
+    // this args will be overridden inside the component
+    name: "",
+    control: {} as any,
+  },
 } satisfies Meta<typeof SelectField>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const options: SelectOption[] = [
-  {
-    id: 0,
-    value: "man",
-    label: "Man",
-  },
-  {
-    id: 1,
-    value: "woman",
-    label: "Woman",
-  },
-  {
-    id: 2,
-    value: "other",
-    label: "Other",
-  },
-];
-
-const PrimaryWithForm = () => {
+const PrimaryWithForm = (props: SelectProps) => {
   const { control, handleSubmit, reset } = useForm<Schema>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -71,13 +76,7 @@ const PrimaryWithForm = () => {
         rowGap: 12,
       }}
     >
-      <SelectField
-        control={control}
-        name="sex"
-        placeholder="Gender"
-        options={options}
-        reset="Reset to default"
-      />
+      <SelectField {...props} control={control} name="sex" />
       <button type="submit">Submit</button>
       <button type="button" onClick={() => reset()}>
         Reset
@@ -86,6 +85,52 @@ const PrimaryWithForm = () => {
   );
 };
 
-export const Primary: Partial<Story> = {
-  render: () => <PrimaryWithForm />,
+export const Primary: Story = {
+  args: {
+    placeholder: "Gender",
+  },
+  render: (props) => <PrimaryWithForm {...props} />,
+};
+
+export const PrimaryWithResetButton: Story = {
+  args: {
+    ...Primary.args,
+    reset: "Reset to default",
+  },
+  render: (props) => <PrimaryWithForm {...props} />,
+};
+
+export const PrimaryDisabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
+  render: (props) => <PrimaryWithForm {...props} />,
+};
+
+export const PrimaryWithDisabledValue: Story = {
+  args: {
+    ...Primary.args,
+    options: options.map((option, index) => ({
+      ...option,
+      disabled: index === 1,
+    })),
+  },
+  render: (props) => <PrimaryWithForm {...props} />,
+};
+
+export const PrimaryWithCustomReturnValue: Story = {
+  args: {
+    placeholder: "Pick value",
+    returnValue: (option) => option.label,
+  },
+  render: (props) => <PrimaryWithForm {...props} />,
+};
+
+export const PrimaryWithCustomDisplayValue: Story = {
+  args: {
+    placeholder: "Pick value",
+    displayValue: (option) => option.value,
+  },
+  render: (props) => <PrimaryWithForm {...props} />,
 };
