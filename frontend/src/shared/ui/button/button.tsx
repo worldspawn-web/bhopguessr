@@ -15,8 +15,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         ref={ref}
         whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ duration: 0.1 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", duration: 0.25, stiffness: 200 }}
         className={classNames(
           styles.button,
           {

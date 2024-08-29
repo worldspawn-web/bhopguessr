@@ -1,8 +1,6 @@
 .button {
   font-weight: 400;
 
-  transition: all $fast-transition-delay;
-
   border: none;
 
   &:not(:disabled) {
