@@ -30,6 +30,7 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
       open,
       invalid,
       reset,
+      disabled,
       ...props
     },
     ref,
@@ -72,7 +73,13 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
     );
 
     return (
-      <Root {...props} open={open} value={value} onValueChange={onChange}>
+      <Root
+        {...props}
+        open={open}
+        value={value}
+        onValueChange={onChange}
+        disabled={disabled}
+      >
         <div className={classNames(styles.select__wrapper, className)}>
           <Trigger
             ref={ref}
@@ -83,6 +90,7 @@ export const Select = forwardRef<React.ElementRef<typeof Trigger>, SelectProps>(
             <p
               className={classNames(styles.trigger__label, {
                 [styles["trigger__label--selected"]]: Boolean(selectedValue),
+                [styles["trigger__label--disabled"]]: disabled,
               })}
             >
               {placeholder}
