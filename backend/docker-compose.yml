@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: bhopguessr_pgdb
+    env_file:
+      - .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
